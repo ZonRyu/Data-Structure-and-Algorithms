@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class User {
     String nama;
 
@@ -7,7 +9,6 @@ public class User {
 }
 
 class Admin extends User {
-
     Admin(String nama) {
         super(nama);
     }
@@ -44,7 +45,32 @@ class Member extends User {
 
     void tampilkanSemuaLagu(Lagu[] playlist) {
         for (Lagu lagu: playlist) {
+            if (lagu == null) {
+                break;
+            }
+
             lagu.tampilkanInfo();
+        }
+    }
+
+    void cariLagu(Lagu[] playlist, String keyword) {
+        System.out.println("Hasil pencarian:");
+
+        int pointerSearchResult = 0;
+        Lagu[] searchResults = new Lagu[playlist.length];
+
+        for (Lagu lagu : playlist) {
+            if (lagu != null) {
+                if (lagu.judul.toLowerCase(Locale.ROOT).contains(keyword.toLowerCase(Locale.ROOT))) {
+                    searchResults[pointerSearchResult] = lagu;
+                    pointerSearchResult = pointerSearchResult + 1;
+                    lagu.tampilkanInfo();
+                }
+            }
+        }
+
+        if (pointerSearchResult == 0) {
+            System.out.println("Tidak ada judul yang cocok");
         }
     }
 }
