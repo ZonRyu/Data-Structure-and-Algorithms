@@ -3,10 +3,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Lagu[] playlist = new Lagu[2];
+        Lagu[] playlist = new Lagu[3];
 
-        playlist[0] = new Lagu("Cico Buff", "Cocteau Twins", 3.15);
-        playlist[1] = new Lagu("Hoppipola", "Sigur Ros", 3.0);
+        playlist[0] = new Lagu("Antarlina", "Goodenough", 5.01);
+        playlist[1] = new Lagu("Sorry, i quit!", "Hoolahoop", 3.47);
+        playlist[2] = new Lagu("Cico Buff", "Cocteau Twins", 3.47);
 
         login(scanner, playlist);
         scanner.close();
