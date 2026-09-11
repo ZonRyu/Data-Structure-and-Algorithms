@@ -25,4 +25,23 @@ public class Member extends User {
             System.out.println("Tidak ada judul yang cocok");
         }
     }
+
+    public void rataRataDurasi(Lagu[] playlist) {
+        double totalDurasi = 0;
+        int jumlahLagu = 0;
+
+        for (Lagu lagu : playlist) {
+            if (lagu != null) {
+                totalDurasi += lagu.getDurasi();
+                jumlahLagu++;
+            }
+        }
+
+        if (jumlahLagu > 0) {
+            double rataRata = totalDurasi / jumlahLagu;
+            System.out.printf("\nRata-rata durasi lagu: %.2f menit\n", rataRata);
+        } else {
+            System.out.println("\nTidak ada lagu dalam playlist.");
+        }
+    }
 }

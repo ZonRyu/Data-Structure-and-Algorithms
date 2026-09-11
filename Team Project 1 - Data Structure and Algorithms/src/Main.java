@@ -98,7 +98,8 @@ public class Main {
             System.out.println("\n===== Menu =====");
             System.out.println("1. Tampilkan Semua Lagu");
             System.out.println("2. Cari Lagu");
-            System.out.println("3. logout");
+            System.out.println("3. Hitung Rata-rata Durasi Lagu Dalam Playlist");
+            System.out.println("4. logout");
 
             System.out.print("\nInput : ");
             int opt = scanner.nextInt();
@@ -113,7 +114,10 @@ public class Main {
                     String keyword = scanner.nextLine();
                     member.cariLagu(playlist, keyword);
                     break;
-                case 3: 
+                case 3:
+                    member.rataRataDurasi(playlist);
+                    break;
+                case 4: 
                     lanjut = false;
                     System.out.println("Logout berhasil.");
                     break;

@@ -13,6 +13,10 @@ public class Lagu {
         return judul;
     }
 
+    public double getDurasi() {
+        return durasi;
+    }
+
     public void tampilkanInfo() {
         System.out.println("Judul : " + this.judul);
         System.out.println("Artis : " + this.artis);
