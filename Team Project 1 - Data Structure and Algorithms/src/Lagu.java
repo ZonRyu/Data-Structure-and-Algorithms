@@ -1,15 +1,26 @@
 public class Lagu {
-    String judul;
-    String artis;
-    double durasi;
+    private String judul;
+    private String artis;
+    private double durasi;
 
-    Lagu(String judul, String artis, double durasi) {
+    public Lagu(String judul, String artis, double durasi) {
         this.judul = judul;
         this.artis = artis;
         this.durasi = durasi;
     }
 
-    void tampilkanInfo(){
-        System.out.println(this.judul + " - " + this.artis + ", " + this.durasi);
+    public String getJudul() {
+        return judul;
+    }
+
+    public double getDurasi() {
+        return durasi;
+    }
+
+    public void tampilkanInfo() {
+        System.out.println("Judul : " + this.judul);
+        System.out.println("Artis : " + this.artis);
+        System.out.println("Durasi: " + this.durasi + " menit");
+        System.out.println("-----------------------");
     }
 }
