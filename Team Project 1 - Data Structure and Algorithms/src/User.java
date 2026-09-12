@@ -4,7 +4,8 @@ public class User {
     protected User(String nama) {
         this.nama = nama;
     }
-
+    
+    // Getter dan Setter untuk nama
     public String getNama() {
         return nama;
     }
@@ -13,6 +14,8 @@ public class User {
         this.nama = nama;
     }
 
+    // Method untuk menampilkan semua lagu dalam playlist
+    // Lagu ditampilkan dengan memanggil method tampilkanInfo() dari setiap objek Lagu dengan cara di looping
     public void tampilkanSemuaLagu(Lagu[] playlist) {
         System.out.println("\n===== Daftar Lagu =====");
 
