@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+    // Method main untuk menjalankan program
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Lagu[] playlist = new Lagu[3];
@@ -13,6 +14,9 @@ public class Main {
         scanner.close();
     }
 
+    // Method untuk menampilkan menu login dan mengarahkan ke menu admin atau member sesuai pilihan user
+    // while loop lanjut = true dilakukan disetiap menu entah logiin, member, atau admin -
+    // agar user bisa kembali ke menu sebelumnya atau keluar dari program sesuai pilihan user
     static void login(Scanner scanner, Lagu[] playlist) {
         boolean lanjut = true;
 
@@ -50,6 +54,7 @@ public class Main {
         }
     }
 
+    // Method untuk menampilkan menu admin
     static Lagu[] menuAdmin(Scanner scanner, Admin admin, Lagu[] playlist) {
         boolean lanjut = true;
 
@@ -91,6 +96,7 @@ public class Main {
         return playlist;
     }
 
+    // Method untuk menampilkan menu member
     static void menuMember(Scanner scanner, Member member, Lagu[] playlist) {
         boolean lanjut = true;
 

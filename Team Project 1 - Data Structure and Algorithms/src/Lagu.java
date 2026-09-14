@@ -9,6 +9,7 @@ public class Lagu {
         this.durasi = durasi;
     }
 
+    // Getter untuk judul dan durasi
     public String getJudul() {
         return judul;
     }
@@ -17,6 +18,7 @@ public class Lagu {
         return durasi;
     }
 
+    // Method untuk menampilkan detail lagu
     public void tampilkanInfo() {
         System.out.println("Judul : " + this.judul);
         System.out.println("Artis : " + this.artis);

@@ -5,6 +5,9 @@ public class Member extends User {
         super(nama);
     }   
 
+    // Method untuk mencari lagu berdasarkan judul
+    // Lagu yang cocok ditampilkan dengan memanggil method tampilkanInfo() dari setiap objek Lagu dengan cara di looping
+    // Jika tidak ada judul yang cocok, tampilkan pesan "Tidak ada judul yang cocok"
     public void cariLagu(Lagu[] playlist, String keyword) {
         System.out.println("\n===== Hasil pencarian =====");
 
@@ -26,6 +29,9 @@ public class Member extends User {
         }
     }
 
+    // Method untuk menghitung rata-rata durasi lagu dalam playlist
+    // Rata-rata dihitung denganc cara loop untuk menjumlahkan durasi semua lagu, 
+    // kemudian dibagi dengan total jumlah lagu yang ada
     public void rataRataDurasi(Lagu[] playlist) {
         double totalDurasi = 0;
         int jumlahLagu = 0;
