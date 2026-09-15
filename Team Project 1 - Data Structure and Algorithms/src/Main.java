@@ -4,7 +4,7 @@ public class Main {
     // Method main untuk menjalankan program
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Lagu[] playlist = new Lagu[3];
+        Lagu[] playlist = new Lagu[5];
 
         playlist[0] = new Lagu("Antarlina", "Goodenough", 5.01);
         playlist[1] = new Lagu("Sorry, i quit!", "Hoolahoop", 3.47);
@@ -62,7 +62,8 @@ public class Main {
             System.out.println("\n===== Menu =====");
             System.out.println("1. Tampilkan Semua Lagu");
             System.out.println("2. Tambah Lagu");
-            System.out.println("3. logout");
+            System.out.println("3. Urutkan lagu dari durasi paling singkat");
+            System.out.println("4. logout");
 
             System.out.print("\nInput : ");
             int opt = scanner.nextInt();
@@ -72,18 +73,12 @@ public class Main {
                     admin.tampilkanSemuaLagu(playlist);
                     break;
                 case 2:
-                    scanner.nextLine(); // Membersihkan newline character dari input sebelumnya
-                    System.out.print("Judul: ");
-                    String judul = scanner.nextLine();
-                    System.out.print("Artis: ");
-                    String artis = scanner.nextLine();
-                    System.out.print("Durasi: ");
-                    double durasi = Double.parseDouble(scanner.nextLine());
-
-                    playlist = admin.tambahLagu(playlist, new Lagu(judul, artis, durasi));
-                    System.out.println("Lagu berhasil ditambahkan!");
+                    playlist = admin.tambahLagu(playlist, scanner);
                     break;
                 case 3:
+                    admin.urutkanLagu(playlist, admin);
+                    break;
+                case 4:
                     lanjut = false;
                     System.out.println("Logout berhasil.");
                     break;
@@ -105,7 +100,8 @@ public class Main {
             System.out.println("1. Tampilkan Semua Lagu");
             System.out.println("2. Cari Lagu");
             System.out.println("3. Hitung Rata-rata Durasi Lagu Dalam Playlist");
-            System.out.println("4. logout");
+            System.out.println("4. Urutkan lagu dari durasi paling singkat");
+            System.out.println("5. logout");
 
             System.out.print("\nInput : ");
             int opt = scanner.nextInt();
@@ -123,7 +119,10 @@ public class Main {
                 case 3:
                     member.rataRataDurasi(playlist);
                     break;
-                case 4: 
+                case 4:
+                    member.urutkanLagu(playlist, member);
+                    break;
+                case 5:
                     lanjut = false;
                     System.out.println("Logout berhasil.");
                     break;
