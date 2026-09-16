@@ -18,6 +18,7 @@ public class Lagu {
         return durasi;
     }
 
+    // Test direct edit
     // Method untuk menampilkan detail lagu
     public void tampilkanInfo() {
         System.out.println("Judul : " + this.judul);
