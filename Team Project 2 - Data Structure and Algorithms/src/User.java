@@ -81,6 +81,39 @@ public class User {
         user.tampilkanSemuaLagu(playlist);
     }
 
+    // Method untuk menghapus lagu dari playlist berdasarkan judul
+    // Deletion dilakukan dengan cara menimpa elemen yang mau dihapus jadi null
+    // Soalnya array di Java ukurannya fixed, jadi ga bisa langsung "dikecilin"
+    public Lagu[] hapusLagu(Lagu[] playlist, String judul) {
+        boolean ditemukan = false;
+
+        for (int i = 0; i < playlist.length; i++) {
+            if (playlist[i] == null) {
+                // Skip kalau index-nya udah kosong
+                continue;
+            }
+
+            // Cek judul lagu di index sekarang sama dengan judul yang mau dihapus
+            if (playlist[i].getJudul().equalsIgnoreCase(judul)) {
+                playlist[i] = null; // "Hapus" dengan cara menimpa jadi null
+                ditemukan = true;
+                System.out.println("Lagu \"" + judul + "\" berhasil dihapus.");
+                break; // Berhenti karna judul diasumsikan unik
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("Lagu \"" + judul + "\" tidak ditemukan di playlist.");
+            return playlist;
+        }
+
+        // Rapihkan array supaya semua null ngumpul di depan
+        // dan lagu yang masih ada ngumpul di belakang
+        playlist = rapihkanArray(playlist);
+
+        return playlist;
+    }
+
     // Private untuk sementara karna masih baru dipakai di class ini saja
     private Lagu[] rapihkanArray(Lagu[] playlist) {
         // Variabel penampung ada berapa banyak null nya

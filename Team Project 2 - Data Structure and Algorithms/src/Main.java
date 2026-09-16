@@ -62,8 +62,9 @@ public class Main {
             System.out.println("\n===== Menu =====");
             System.out.println("1. Tampilkan Semua Lagu");
             System.out.println("2. Tambah Lagu");
-            System.out.println("3. Urutkan lagu dari durasi paling singkat");
-            System.out.println("4. logout");
+            System.out.println("3. Hapus Lagu");
+            System.out.println("4. Urutkan lagu dari durasi paling singkat");
+            System.out.println("5. logout");
 
             System.out.print("\nInput : ");
             int opt = scanner.nextInt();
@@ -76,9 +77,15 @@ public class Main {
                     playlist = admin.tambahLagu(playlist, scanner);
                     break;
                 case 3:
-                    admin.urutkanLagu(playlist, admin);
+                    scanner.nextLine(); // Membersihkan newline character dari input sebelumnya
+                    System.out.println("Masukkan judul lagu yang ingin dihapus: ");
+                    String judulHapus = scanner.nextLine();
+                    playlist = admin.hapusLagu(playlist, judulHapus);
                     break;
                 case 4:
+                    admin.urutkanLagu(playlist, admin);
+                    break;
+                case 5:
                     lanjut = false;
                     System.out.println("Logout berhasil.");
                     break;
@@ -119,10 +126,7 @@ public class Main {
                 case 3:
                     member.rataRataDurasi(playlist);
                     break;
-                case 4:
-                    member.urutkanLagu(playlist, member);
-                    break;
-                case 5:
+                case 4: 
                     lanjut = false;
                     System.out.println("Logout berhasil.");
                     break;
