@@ -118,6 +118,9 @@ public class User {
     private Lagu[] rapihkanArray(Lagu[] playlist) {
         // Variabel penampung ada berapa banyak null nya
         int totalNull = 0;
+        // Variabel pointer untuk index array baru
+        // Jadi lagu akan pindah ke depan dan yang null dipindahkan ke belakang
+        int pointerNewPlaylist = 0;
         // Array penampung baru
         Lagu[] newPLaylist = new Lagu[playlist.length];
 
@@ -129,13 +132,13 @@ public class User {
         }
 
         // Kalau ada yang null
-        // Looping/copy array lama ke array baru dengan index dari totalNull
-        if (totalNull != 0) {
+        // Looping/copy array lama ke array baru dengan index dari pointerNewPlaylist
+        if (totalNull > 0) {
             for (Lagu lagu : playlist) {
                 if (lagu != null) {
-                    newPLaylist[totalNull] = lagu;
-                    // Mengurangi pointer untuk array baru
-                    totalNull--;
+                    newPLaylist[pointerNewPlaylist] = lagu;
+                    // Menambah pointer untuk array baru
+                    pointerNewPlaylist++;
                 }
             }
         }
