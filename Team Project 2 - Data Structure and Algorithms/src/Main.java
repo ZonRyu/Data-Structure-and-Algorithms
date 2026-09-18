@@ -126,7 +126,10 @@ public class Main {
                 case 3:
                     member.rataRataDurasi(playlist);
                     break;
-                case 4: 
+                case 4:
+                    member.urutkanLagu(playlist, member);
+                    break;
+                case 5:
                     lanjut = false;
                     System.out.println("Logout berhasil.");
                     break;
