@@ -8,8 +8,6 @@
  *  5. Muhammad Taufiq Al Hakim / 2902820775
 */
 
-import java.util.Locale;
-
 public class Lagu {
     private String judul;
     private String artis;
