@@ -1,7 +1,6 @@
 /*
  * Tugas Kelompok 2 - Data Structures and Algorithm Analysis
- * Kelompok 2 | Kelas: [ISI KELAS]
- * Anggota:
+ * Anggota - Group 2:
  *  1. Julyon Putra Sannie      / 2902816550
  *  2. Dede Rukmana             / 2902830366
  *  3. Faiza Shifa Medina       / 2902826034
