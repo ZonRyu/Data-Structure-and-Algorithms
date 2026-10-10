@@ -31,7 +31,6 @@ public class Main {
             System.out.println("2. Undo/Redo Editor Teks (Stack)");
             System.out.println("3. Data Mahasiswa (Linked List)");
             System.out.println("4. Benchmark waktu eksekusi");
-            System.out.println("5. Demo sesuai contoh output soal");
             System.out.println("0. Keluar");
             int pilihan = bacaAngka("Pilih menu: ");
 
@@ -47,9 +46,6 @@ public class Main {
                     break;
                 case 4:
                     Benchmark.main(new String[0]);
-                    break;
-                case 5:
-                    demoContohOutput();
                     break;
                 case 0:
                     berjalan = false;
@@ -209,39 +205,6 @@ public class Main {
                     System.out.println("Pilihan tidak tersedia.");
             }
         } while (pilihan != 0);
-    }
-
-    // Seperti contoh soal
-    private static void demoContohOutput() {
-        System.out.println("\n[Contoh Output: Sistem Antrean (Queue)]");
-        CustomerQueue q = new CustomerQueue();
-        q.enqueue(new Customer("Andi"));
-        q.enqueue(new Customer("Budi"));
-        q.enqueue(new Customer("Siti"));
-        q.display();
-        System.out.println();
-        System.out.println("Melayani pelanggan: " + q.serve().getName());
-        q.display();
-
-        System.out.println("\n[Contoh Output: Undo/Redo (Stack)]");
-        TextEditor e = new TextEditor();
-        e.addText("Selamat");
-        e.addText(" datang");
-        System.out.println("Teks saat ini: \"" + e.getCurrentText() + "\"");
-        e.undo();
-        System.out.println("Undo: \"" + e.getCurrentText() + "\"");
-        e.redo();
-        System.out.println("Redo: \"" + e.getCurrentText() + "\"");
-
-        System.out.println("\n[Contoh Output: Data Mahasiswa (Linked List)]");
-        StudentList list = new StudentList();
-        list.addStudent(new Mahasiswa("12345", "Andi", 85));
-        list.addStudent(new Mahasiswa("67890", "Budi", 90));
-        list.displayStudents();
-        System.out.println();
-        System.out.println("Mengupdate nilai mahasiswa (Budi -> 95)");
-        list.updateNilai("67890", 95);
-        list.displayStudents("Daftar Mahasiswa setelah update:");
     }
 
     private static void tampilkanTeks() {
