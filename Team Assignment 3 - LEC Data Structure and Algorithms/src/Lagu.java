@@ -24,6 +24,10 @@ public class Lagu {
         return judul;
     }
 
+    public String getArtis() {
+        return artis;
+    }
+
     public double getDurasi() {
         return durasi;
     }
