@@ -31,13 +31,4 @@ public class Lagu {
     public double getDurasi() {
         return durasi;
     }
-
-    // Test direct edit
-    // Method untuk menampilkan detail lagu
-    public void tampilkanInfo() {
-        System.out.println("Judul : " + this.judul);
-        System.out.println("Artis : " + this.artis);
-        System.out.println("Durasi: " + this.durasi + " menit");
-        System.out.println("-----------------------");
-    }
 }
