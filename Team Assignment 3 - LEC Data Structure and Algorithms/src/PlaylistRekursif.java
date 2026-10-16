@@ -52,14 +52,14 @@ public class PlaylistRekursif {
         
         Recursive Case: bandingkan durasi list[n-1] dengan lagu terpanjang dari sub-array (n-1)
      */
-    public static Lagu cariLaguTerpanjang(Lagu[] list, int n) {
+    public static Lagu cariDurasiTerpanjang(Lagu[] list, int n) {
         if (n <= 0) {
             return null;
         }
         if (n == 1) {
             return list[0];
         }
-        Lagu maxSebelumnya = cariLaguTerpanjang(list, n - 1);
+        Lagu maxSebelumnya = cariDurasiTerpanjang(list, n - 1);
         if (list[n - 1].getDurasi() > maxSebelumnya.getDurasi()) {
             return list[n - 1];
         } else {
