@@ -1,11 +1,11 @@
 /*
- * Tugas Kelompok 2 - Data Structures and Algorithm Analysis
- * Group 2 - Anggota:
- *  1. Julyon Putra Sannie      / 2902816550
- *  2. Dede Rukmana             / 2902830366
- *  3. Faiza Shifa Medina       / 2902826034
- *  4. Bima Galaxy Putra        / 2902819464
- *  5. Muhammad Taufiq Al Hakim / 2902820775
+Tugas Kelompok 3 - [LEC] Data Structures and Algorithm Analysis
+Group 2 - Anggota:
+1. Julyon Putra Sannie      / 2902816550
+2. Dede Rukmana             / 2902830366
+3. Faiza Shifa Medina       / 2902826034
+4. Bima Galaxy Putra        / 2902819464
+5. Muhammad Taufiq Al Hakim / 2902820775
 */
 
 import java.util.Locale;
@@ -22,7 +22,7 @@ public class Benchmark {
         long startTotal = System.nanoTime();
         double total = PlaylistRekursif.totalDurasi(playlist, n);
         long endTotal = System.nanoTime();
-        long timeTotalMs = (endTotal - startTotal) / 1_000_000;
+        double timeTotalMs = (endTotal - startTotal) / 1_000_000.0;
 
         System.out.printf(Locale.US, "Total durasi : %.2f menit\n", total);
 
@@ -30,10 +30,10 @@ public class Benchmark {
         long startMax = System.nanoTime();
         Lagu laguTerpanjang = PlaylistRekursif.cariDurasiTerpanjang(playlist, n);
         long endMax = System.nanoTime();
-        long timeMaxMs = (endMax - startMax) / 1_000_000;
+        double timeMaxMs = (endMax - startMax) / 1_000_000.0;
 
         if (laguTerpanjang != null) {
-            System.out.printf(Locale.US, "Lagu terpanjang: \"%s\" %s (%.2f menit)\n",
+            System.out.printf(Locale.US, "Lagu terpanjang: \"%s\" - %s (%.2f menit)\n",
                     laguTerpanjang.getJudul(), laguTerpanjang.getArtis(), laguTerpanjang.getDurasi());
         }
 
@@ -43,12 +43,12 @@ public class Benchmark {
         // Rekursi mundur dimulai dari indeks terakhir (n - 1)
         PlaylistRekursif.tampilkanMundur(playlist, n - 1);
         long endMundur = System.nanoTime();
-        long timeMundurMs = (endMundur - startMundur) / 1_000_000;
+        double long timeMundurMs = (endMundur - startMundur) / 1_000_000.0;
 
         // Menampilkan hasil pengukuran waktu eksekusi
-        System.out.println("\nExecution Time (totalDurasi): " + timeTotalMs + " ms");
-        System.out.println("Execution Time (tampilkanMundur): " + timeMundurMs + " ms");
-        System.out.println("Execution Time (cariDurasiTerpanjang): " + timeMaxMs + " ms");
+        System.out.printf(Locale.US, "\nExecution Time (totalDurasi): %.4f ms%n", timeTotalMs);
+        System.out.printf(Locale.US, "Execution Time (tampilkanMundur): %.4f ms%n", timeMundurMs);
+        System.out.printf(Locale.US, "Execution Time (cariDurasiTerpanjang): %.4f ms%n", timeMaxMs);
         System.out.println("==================================");
     }
 }
