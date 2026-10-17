@@ -30,20 +30,31 @@ public class PlaylistRekursif {
         return list[n - 1].getDurasi() + totalDurasi(list, n - 1);
     }
 
-    /*
-        Menampilkan daftar lagu secara terbalik (reverse traversal).
-
-        Base Case: index < 0 -> berhenti (return)
-
-        Recursive Case: cetak lagu pada index saat ini, lalu panggil tampilkanMundur(list, index - 1)
-     */
-    public static void tampilkanMundur(Lagu[] list, int index) {
-        if (index < 0) {
-            return;
-        }
-        System.out.println((index + 1) + ". " + list[index].getJudul());
-        tampilkanMundur(list, index - 1);
+ /*
+ * Tujuan:
+ * Menampilkan daftar lagu dari akhir ke awal menggunakan rekursi.
+ *
+ * Base Case:
+ * Jika index < 0, rekursi dihentikan karena tidak ada
+ * elemen playlist yang perlu ditampilkan.
+ *
+ * Recursive Case:
+ * Menampilkan lagu pada indeks saat ini, kemudian
+ * memanggil tampilkanMundur(list, index - 1).
+ *
+ * Kompleksitas Waktu: O(n), karena setiap lagu ditampilkan
+ * tepat satu kali.
+ *
+ * Kompleksitas Ruang: O(n), karena kedalaman call stack
+ * sebanding dengan jumlah lagu.
+ */
+public static void tampilkanMundur(Lagu[] list, int index) {
+    if (index < 0) {
+        return;
     }
+    System.out.println((index + 1) + ". " + list[index].getJudul());
+    tampilkanMundur(list, index - 1);
+}
 
     /*
         Mengembalikan objek Lagu yang memiliki durasi paling lama.
