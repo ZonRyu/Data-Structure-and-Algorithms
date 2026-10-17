@@ -43,7 +43,7 @@ public class Benchmark {
         // Rekursi mundur dimulai dari indeks terakhir (n - 1)
         PlaylistRekursif.tampilkanMundur(playlist, n - 1);
         long endMundur = System.nanoTime();
-        double long timeMundurMs = (endMundur - startMundur) / 1_000_000.0;
+        double timeMundurMs = (endMundur - startMundur) / 1_000_000.0;
 
         // Menampilkan hasil pengukuran waktu eksekusi
         System.out.printf(Locale.US, "\nExecution Time (totalDurasi): %.4f ms%n", timeTotalMs);
