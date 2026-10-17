@@ -28,7 +28,7 @@ public class Benchmark {
 
         // Pengukuran waktu cariDurasiTerpanjang() / cariLaguTerpanjang()
         long startMax = System.nanoTime();
-        Lagu laguTerpanjang = PlaylistRekursif.cariLaguTerpanjang(playlist, n);
+        Lagu laguTerpanjang = PlaylistRekursif.cariDurasiTerpanjang(playlist, n);
         long endMax = System.nanoTime();
         long timeMaxMs = (endMax - startMax) / 1_000_000;
 
